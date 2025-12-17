@@ -1,0 +1,5 @@
+{
+  "name": "Simulador do Primeiro Milhão",
+  "description": "Calculadora de juros compostos focada em atingir o primeiro milhão, com projeções de prazo ou aporte necessário.",
+  "requestFramePermissions": []
+}
