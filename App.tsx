@@ -10,9 +10,9 @@ import { calculateCompoundInterest } from './utils/calculations';
 import { formatCurrency, formatNumber } from './utils/formatters';
 import { InfoSection } from './components/InfoSection';
 
-const COLORS = ['#4a5568', '#7f1d1d']; // Gray (Invested), Red (Interest)
+const COLORS = ['#4a5568', '#1e40af']; // Gray (Invested), Blue (Interest)
 const AREA_COLORS = {
-  total: '#7f1d1d',   // Red
+  total: '#1e40af',   // Blue
   invested: '#1e293b', // Slate 800
   target: '#e2e8f0'    // Light Gray line
 };
@@ -72,11 +72,11 @@ export default function App() {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="bg-red-900 p-2 rounded-lg text-white">
+            <div className="bg-blue-900 p-2 rounded-lg text-white">
               <Calculator className="w-5 h-5" />
             </div>
             <h1 className="text-xl font-bold text-slate-800">
-              <span className="text-red-900">Rumo ao Milhão</span>
+              <span className="text-blue-900">Rumo ao Milhão</span>
             </h1>
           </div>
           <div className="text-sm text-slate-500 hidden sm:block">
@@ -90,7 +90,7 @@ export default function App() {
         {/* Calculator Card */}
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden mb-10">
           <div className="p-6 border-b border-slate-100 bg-slate-50/50">
-            <h2 className="text-lg font-bold text-red-900 flex items-center gap-2">
+            <h2 className="text-lg font-bold text-blue-900 flex items-center gap-2">
               Calculadora do Primeiro Milhão
             </h2>
           </div>
@@ -103,7 +103,7 @@ export default function App() {
                 <label className="text-sm font-semibold text-slate-700">Tipo de Cálculo</label>
                 <div className="relative">
                   <select 
-                    className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-900 focus:border-red-900 outline-none appearance-none transition-all font-medium text-slate-700"
+                    className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none appearance-none transition-all font-medium text-slate-700"
                     value={input.type}
                     onChange={(e) => {
                       setInput({...input, type: e.target.value as CalculationType});
@@ -120,12 +120,12 @@ export default function App() {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Valor inicial (R$)</label>
                 <div className="relative group">
-                  <DollarSign className="absolute left-3 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-red-900 transition-colors" />
+                  <DollarSign className="absolute left-3 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-blue-900 transition-colors" />
                   <input 
                     type="number"
                     min="0"
                     step="100"
-                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-900 focus:border-red-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300"
+                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300"
                     placeholder="0,00"
                     value={input.initialValue || ''}
                     onChange={(e) => setInput({...input, initialValue: parseFloat(e.target.value)})}
@@ -141,12 +141,12 @@ export default function App() {
                 <div className="space-y-2 animate-fadeIn">
                   <label className="text-sm font-semibold text-slate-700">Aporte mensal (R$)</label>
                   <div className="relative group">
-                    <DollarSign className="absolute left-3 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-red-900 transition-colors" />
+                    <DollarSign className="absolute left-3 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-blue-900 transition-colors" />
                     <input 
                       type="number"
                       min="0"
                       step="100"
-                      className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-900 focus:border-red-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300"
+                      className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300"
                       placeholder="0,00"
                       value={input.monthlyContribution || ''}
                       onChange={(e) => setInput({...input, monthlyContribution: parseFloat(e.target.value)})}
@@ -157,12 +157,12 @@ export default function App() {
                 <div className="space-y-2 animate-fadeIn">
                   <label className="text-sm font-semibold text-slate-700">Prazo (Anos)</label>
                   <div className="relative group">
-                    <Calendar className="absolute left-3 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-red-900 transition-colors" />
+                    <Calendar className="absolute left-3 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-blue-900 transition-colors" />
                     <input 
                       type="number"
                       min="1"
                       step="1"
-                      className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-900 focus:border-red-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300"
+                      className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300"
                       placeholder="Anos"
                       value={input.targetYears || ''}
                       onChange={(e) => setInput({...input, targetYears: parseFloat(e.target.value)})}
@@ -180,14 +180,14 @@ export default function App() {
                       type="number"
                       min="0"
                       step="0.1"
-                      className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-l-lg focus:ring-2 focus:ring-red-900 focus:border-red-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300 z-10 relative"
+                      className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-l-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-300 z-10 relative"
                       placeholder="0.00"
                       value={input.interestRate || ''}
                       onChange={(e) => setInput({...input, interestRate: parseFloat(e.target.value)})}
                     />
                   </div>
                   <select 
-                    className="bg-slate-100 border border-l-0 border-slate-300 text-slate-700 text-sm font-medium px-4 py-3 rounded-r-lg hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-red-900 focus:border-red-900 transition-colors"
+                    className="bg-slate-100 border border-l-0 border-slate-300 text-slate-700 text-sm font-medium px-4 py-3 rounded-r-lg hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition-colors"
                     value={input.ratePeriod}
                     onChange={(e) => setInput({...input, ratePeriod: e.target.value as PeriodType})}
                   >
@@ -202,7 +202,7 @@ export default function App() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
               <button 
                 onClick={handleCalculate}
-                className="w-full sm:w-auto px-8 py-3.5 bg-red-900 hover:bg-red-800 text-white font-bold rounded-lg shadow-lg shadow-red-900/20 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-3.5 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-lg shadow-lg shadow-blue-900/20 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <Calculator className="w-5 h-5" />
                 Calcular Resultado
@@ -230,8 +230,8 @@ export default function App() {
                
                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 relative z-10">
                  {input.type === CalculationType.CONTRIBUTION_NEEDED 
-                    ? <span className="text-red-900">{formatCurrency(result.requiredMonthlyContribution || 0)} mensais</span>
-                    : <span className="text-red-900">{Math.floor(result.totalMonths / 12)} anos e {result.totalMonths % 12} meses</span>
+                    ? <span className="text-blue-900">{formatCurrency(result.requiredMonthlyContribution || 0)} mensais</span>
+                    : <span className="text-blue-900">{Math.floor(result.totalMonths / 12)} anos e {result.totalMonths % 12} meses</span>
                  }
                </h3>
                <p className="text-slate-600 font-medium relative z-10">{result.message}</p>
@@ -239,10 +239,10 @@ export default function App() {
 
             {/* Summary Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-red-900 text-white p-6 rounded-xl shadow-lg shadow-red-900/20 transform hover:scale-[1.02] transition-transform">
-                <div className="text-red-200 text-sm font-medium mb-1 uppercase tracking-wide">Valor Total Final</div>
+              <div className="bg-blue-900 text-white p-6 rounded-xl shadow-lg shadow-blue-900/20 transform hover:scale-[1.02] transition-transform">
+                <div className="text-blue-200 text-sm font-medium mb-1 uppercase tracking-wide">Valor Total Final</div>
                 <div className="text-3xl font-bold">{formatCurrency(result.finalAmount)}</div>
-                <div className="mt-4 text-xs text-red-200 flex items-center gap-1">
+                <div className="mt-4 text-xs text-blue-200 flex items-center gap-1">
                   <CheckCircle className="w-3 h-3" /> Meta atingida
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function App() {
                 <div className="text-slate-500 text-sm font-medium mb-1 uppercase tracking-wide">Total em Juros</div>
                 <div className="text-2xl font-bold text-slate-800">{formatCurrency(result.totalInterest)}</div>
                 <div className="mt-4 h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-red-800 rounded-full" style={{ width: `${(result.totalInterest / result.finalAmount) * 100}%` }}></div>
+                  <div className="h-full bg-blue-800 rounded-full" style={{ width: `${(result.totalInterest / result.finalAmount) * 100}%` }}></div>
                 </div>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function App() {
             {/* Charts & Details Container */}
             <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
               <div className="p-6 border-b border-slate-100">
-                <h3 className="text-lg font-bold text-red-900">Composição e Evolução</h3>
+                <h3 className="text-lg font-bold text-blue-900">Composição e Evolução</h3>
               </div>
               
               <div className="p-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -301,7 +301,7 @@ export default function App() {
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="text-center">
                         <span className="block text-xs text-slate-400 font-bold uppercase">Rentabilidade</span>
-                        <span className="block text-xl font-bold text-red-900">
+                        <span className="block text-xl font-bold text-blue-900">
                           {((result.totalInterest / result.finalAmount) * 100).toFixed(0)}%
                         </span>
                       </div>
@@ -403,7 +403,7 @@ export default function App() {
                           <th className="px-6 py-3">Juros (Ano)</th>
                           <th className="px-6 py-3">Total Investido</th>
                           <th className="px-6 py-3">Total Juros</th>
-                          <th className="px-6 py-3 font-bold text-red-900 rounded-r-lg">Total Acumulado</th>
+                          <th className="px-6 py-3 font-bold text-blue-900 rounded-r-lg">Total Acumulado</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -414,7 +414,7 @@ export default function App() {
                             <td className="px-6 py-4 text-green-600">+{formatCurrency(row.interestAnnual)}</td>
                             <td className="px-6 py-4 text-slate-500">{formatCurrency(row.totalInvested)}</td>
                             <td className="px-6 py-4 text-slate-500">{formatCurrency(row.totalInterest)}</td>
-                            <td className="px-6 py-4 font-bold text-red-900">{formatCurrency(row.totalAccumulated)}</td>
+                            <td className="px-6 py-4 font-bold text-blue-900">{formatCurrency(row.totalAccumulated)}</td>
                           </tr>
                         ))}
                       </tbody>

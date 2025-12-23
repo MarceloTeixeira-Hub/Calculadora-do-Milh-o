@@ -8,13 +8,13 @@ export const InfoSection: React.FC = () => {
       {/* How to use */}
       <section className="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-          <BookOpen className="w-6 h-6 text-red-800" />
+          <BookOpen className="w-6 h-6 text-blue-800" />
           Como usar a Calculadora do Primeiro Milhão
         </h2>
         
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h3 className="font-semibold text-lg mb-3 text-red-900">1. Escolha o tipo de cálculo</h3>
+            <h3 className="font-semibold text-lg mb-3 text-blue-900">1. Escolha o tipo de cálculo</h3>
             <ul className="space-y-2 text-sm text-slate-600">
               <li className="flex gap-2">
                 <span className="font-medium text-slate-900">Calcular prazo:</span>
@@ -28,7 +28,7 @@ export const InfoSection: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-3 text-red-900">2. Configure os valores</h3>
+            <h3 className="font-semibold text-lg mb-3 text-blue-900">2. Configure os valores</h3>
             <ul className="space-y-2 text-sm text-slate-600">
               <li><span className="font-medium">Valor Inicial:</span> Quanto você já tem investido hoje. Se está começando, use 0.</li>
               <li><span className="font-medium">Taxa de Juros:</span> A rentabilidade esperada. Ex: 8% a.a. é uma referência conservadora para renda variável/FIIs.</li>
@@ -40,11 +40,11 @@ export const InfoSection: React.FC = () => {
       {/* Difference between modes */}
       <section>
         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-          <Target className="w-6 h-6 text-red-800" />
+          <Target className="w-6 h-6 text-blue-800" />
           Qual modalidade escolher?
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-slate-50 p-6 rounded-lg border-l-4 border-red-800">
+          <div className="bg-slate-50 p-6 rounded-lg border-l-4 border-blue-800">
             <h3 className="font-bold text-lg mb-2">Calcular Prazo</h3>
             <p className="text-sm text-slate-600 mb-4">Ideal se você já sabe quanto pode poupar por mês e quer saber quando alcançará sua liberdade financeira.</p>
             <ul className="text-sm list-disc list-inside text-slate-600">
@@ -52,7 +52,7 @@ export const InfoSection: React.FC = () => {
               <li>Mostra a evolução anual do patrimônio.</li>
             </ul>
           </div>
-          <div className="bg-slate-50 p-6 rounded-lg border-l-4 border-blue-800">
+          <div className="bg-slate-50 p-6 rounded-lg border-l-4 border-sky-600">
             <h3 className="font-bold text-lg mb-2">Calcular Aporte Necessário</h3>
             <p className="text-sm text-slate-600 mb-4">Ideal se você tem uma meta de data (ex: aposentar em 15 anos) e precisa ajustar seu orçamento.</p>
             <ul className="text-sm list-disc list-inside text-slate-600">
