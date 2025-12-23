@@ -76,11 +76,11 @@ export default function App() {
               <Calculator className="w-5 h-5" />
             </div>
             <h1 className="text-xl font-bold text-slate-800">
-              <span className="text-blue-900">Rumo ao Milhão</span>
+              <span className="text-blue-900">Calculadora para Nossos Filhos - AJF</span>
             </h1>
           </div>
           <div className="text-sm text-slate-500 hidden sm:block">
-            Planejamento Financeiro Inteligente
+            Planejamento Financeiro para o Futuro
           </div>
         </div>
       </header>
@@ -91,7 +91,7 @@ export default function App() {
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden mb-10">
           <div className="p-6 border-b border-slate-100 bg-slate-50/50">
             <h2 className="text-lg font-bold text-blue-900 flex items-center gap-2">
-              Calculadora do Primeiro Milhão
+              Calculadora para o Futuro - AJF
             </h2>
           </div>
           
@@ -440,7 +440,7 @@ export default function App() {
       </main>
       
       <footer className="bg-white border-t border-slate-200 mt-12 py-8 text-center text-slate-400 text-sm">
-        <p>© {new Date().getFullYear()} Simulador do Primeiro Milhão. Todos os direitos reservados.</p>
+        <p>© {new Date().getFullYear()} Calculadora para Nossos Filhos - AJF. Todos os direitos reservados.</p>
       </footer>
     </div>
   );

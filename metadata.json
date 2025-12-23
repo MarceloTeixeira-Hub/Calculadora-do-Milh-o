@@ -1,5 +1,5 @@
 {
-  "name": "Simulador do Primeiro Milhão",
-  "description": "Calculadora de juros compostos focada em atingir o primeiro milhão, com projeções de prazo ou aporte necessário.",
+  "name": "Calculadora para Nossos Filhos - AJF",
+  "description": "Calculadora de juros compostos focada no futuro financeiro dos filhos, com projeções de prazo ou aporte necessário.",
   "requestFramePermissions": []
 }
